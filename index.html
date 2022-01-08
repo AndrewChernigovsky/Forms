@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Forms</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="form-wrapper">
+		<form class="form">
+			<fieldset class="form__fieldset form__fieldset-contacts">
+				<label for="email">Your email</label>
+				<input type="email" name="email" id="email" placeholder="cat@gmail.com">
+				<label for="phone">Your phone</label>
+				<input type="phone" name="phone" id="phone" placeholder="+7(953)112-12-43">
+				<label for="username">Your name</label>
+				<input type="text" name="username" id="username" placeholder="Andrew">
+			</fieldset>
+			<fieldset class="form__fieldset form__fieldset-sex">
+				<input type="radio" name="sex" id="Male">
+				<label for="Male">Male</label>
+				<input type="radio" name="sex" id="Female">
+				<label for="Female">Female</label>
+				<input type="radio" name="sex" id="Bi">
+				<label for="Bi">Bi</label>
+			</fieldset>
+			<fieldset class="form__fieldset form__fieldset-age">
+				<label for="teenager">teenager</label>
+				<input type="checkbox" name="teenager" id="teenager">
+				<label for="adult">adult</label>
+				<input type="checkbox" name="adult" id="adult">
+				<label for="old">old</label>
+				<input type="checkbox" name="old" id="old">
+			</fieldset>
+	
+			<select name="Category" id="Category">
+				<option value="A" selected>Category A</option>
+				<option value="B">Category B</option>
+				<option value="C">Category C</option>
+				<option value="D">Category D</option>
+				<option value="E">Category E</option>
+			</select>
+			
+			<div class="datauser-fieldset">
+				<input type="checkbox" class="datauser" id="dataUser"></input>
+				<label for="dataUser">Даю согласие на обработку персональных данных</label>
+			</div>
+			<button type="submit" class="push" id="push">Push</button>
+		</form>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
