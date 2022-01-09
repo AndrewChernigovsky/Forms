@@ -9,40 +9,67 @@
 </head>
 <body>
 	<div class="form-wrapper">
-		<form class="form">
-			<fieldset class="form__fieldset form__fieldset-contacts">
-				<label for="email">Your email</label>
-				<input type="email" name="email" id="email" placeholder="cat@gmail.com">
-				<label for="phone">Your phone</label>
-				<input type="phone" name="phone" id="phone" placeholder="+7(953)112-12-43">
-				<label for="username">Your name</label>
-				<input type="text" name="username" id="username" placeholder="Andrew">
-			</fieldset>
-			<fieldset class="form__fieldset form__fieldset-sex">
-				<input type="radio" name="sex" id="Male">
-				<label for="Male">Male</label>
-				<input type="radio" name="sex" id="Female">
-				<label for="Female">Female</label>
-				<input type="radio" name="sex" id="Bi">
-				<label for="Bi">Bi</label>
-			</fieldset>
-			<fieldset class="form__fieldset form__fieldset-age">
-				<label for="teenager">teenager</label>
-				<input type="checkbox" name="teenager" id="teenager">
-				<label for="adult">adult</label>
-				<input type="checkbox" name="adult" id="adult">
-				<label for="old">old</label>
-				<input type="checkbox" name="old" id="old">
-			</fieldset>
-	
-			<select name="Category" id="Category">
-				<option value="A" selected>Category A</option>
-				<option value="B">Category B</option>
-				<option value="C">Category C</option>
-				<option value="D">Category D</option>
-				<option value="E">Category E</option>
-			</select>
-			
+		<form class="form" id="form">
+			<div class="wrapper">
+				<fieldset class="form__fieldset form__fieldset-contacts">
+					<label for="email">Your email</label>
+					<input type="email" name="email" id="email" placeholder="cat@gmail.com">
+					<label for="phone">Your phone</label>
+					<input type="phone" name="phone" id="phone" placeholder="+7(953)112-12-43">
+					<label for="username">Your name</label>
+					<input type="text" name="username" id="username" placeholder="Andrew">
+				</fieldset>
+			</div>
+
+			<div class="wrapper">
+				<fieldset class="form__fieldset form__fieldset-sex">
+					<p>Choose your sex</p>
+
+					<span>
+						<input type="radio" name="sex" id="Male">
+						<label for="Male">Male</label>
+					</span>
+					
+					<span>
+						<input type="radio" name="sex" id="Female">
+						<label for="Female">Female</label>
+					</span>
+					
+					<span>
+						<input type="radio" name="sex" id="Bi">
+						<label for="Bi">Bi</label>
+					</span>
+				</fieldset>
+				<fieldset class="form__fieldset form__fieldset-age">
+					<p>Choose your age</p>
+					<span>
+						<input type="checkbox" name="teenager" id="teenager">
+						<label for="teenager">teenager</label>
+					</span>
+					
+					<span>
+						<input type="checkbox" name="adult" id="adult">
+						<label for="adult">adult</label>
+					</span>
+
+					<span>
+						<input type="checkbox" name="old" id="old">
+						<label for="old">old</label>
+					</span>
+				</fieldset>
+			</div>
+
+			<div class="wrapper category-wrapper">
+				<p>Choose your Category</p>
+				<select class="category" name="Category" id="Category">
+					<option value="A" selected>Category A</option>
+					<option value="B">Category B</option>
+					<option value="C">Category C</option>
+					<option value="D">Category D</option>
+					<option value="E">Category E</option>
+				</select>
+			</div>
+
 			<div class="datauser-fieldset">
 				<input type="checkbox" class="datauser" id="dataUser"></input>
 				<label for="dataUser">Даю согласие на обработку персональных данных</label>

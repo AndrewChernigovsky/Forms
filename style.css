@@ -2,6 +2,11 @@
 	box-sizing: border-box;
 }
 
+body {
+	font-size: 20px;
+	font-weight: 600;
+}
+
 .form-wrapper {
 	max-width: 900px;
 	display: flex;
@@ -22,14 +27,14 @@
 .form__fieldset {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	flex-direction: column;
-	min-width: 100%;
 	border: none;
+	padding: 0;
 }
 
 .form__fieldset-contacts label{
 	text-align: left;
+	margin-bottom: 5px;
 }
 
 
@@ -38,19 +43,52 @@
 }
 
 .form__fieldset-sex {
-	flex-direction: row;
+	margin-right: 15px;
 }
 
 .form__fieldset-age {
-	flex-direction: row;
-	align-items: normal;
+
 }
 
 .push {
 	min-width: 100px;
 	padding: 10px;
+
+	text-align: left;
 }
 
 .datauser-fieldset {
 	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.datauser {
+	margin-right: 5px;
+}
+
+.wrapper {
+	display: flex;
+	min-width: 280px;
+	justify-content: space-between;
+}
+
+.category {
+	height: 30px;
+}
+
+.category-wrapper {
+	align-items: center;
+}
+
+.category-wrapper p{
+	margin-right: 15px;
+}
+
+.error {
+	color: red;
+}
+
+.advice {
+	color: green;
 }
