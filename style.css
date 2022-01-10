@@ -40,6 +40,7 @@ body {
 
 .form__fieldset input{
 	margin-bottom: 10px;
+	position: relative;
 }
 
 .form__fieldset-sex {
@@ -86,7 +87,14 @@ body {
 }
 
 .error {
-	color: red;
+	color: green;
+	position: absolute;
+	background-color: white;
+	width: max-content;
+	border: 1px solid black;
+	height: auto;
+	padding: 10px;
+	z-index: 1;
 }
 
 .advice {

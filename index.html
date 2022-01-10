@@ -12,12 +12,18 @@
 		<form class="form" id="form">
 			<div class="wrapper">
 				<fieldset class="form__fieldset form__fieldset-contacts">
-					<label for="email">Your email</label>
-					<input type="email" name="email" id="email" placeholder="cat@gmail.com">
-					<label for="phone">Your phone</label>
-					<input type="phone" name="phone" id="phone" placeholder="+7(953)112-12-43">
-					<label for="username">Your name</label>
-					<input type="text" name="username" id="username" placeholder="Andrew">
+					<div class="email">
+						<label for="email">Your email</label>
+						<input type="text" name="email" id="email" placeholder="cat@gmail.com">
+					</div>
+					<div class="phone">
+						<label for="phone">Your phone</label>
+						<input type="phone" name="phone" id="phone" placeholder="+7(953)112-12-43">
+					</div>
+					<div class="username">
+						<label for="username">Your name</label>
+						<input type="text" name="username" id="username" placeholder="Andrew">
+					</div>
 				</fieldset>
 			</div>
 
@@ -70,10 +76,20 @@
 				</select>
 			</div>
 
+			<div class="comment">
+				<div class="file">
+					<input type="file" name="file" id="file"></input>
+					<label for="file">photo your truble</label>
+				</div>
+				<textarea name="comment" id="comment" cols="30" rows="10" placeholder="Опишите пробему здесь">
+				</textarea>
+			</div>
+
 			<div class="datauser-fieldset">
 				<input type="checkbox" class="datauser" id="dataUser"></input>
 				<label for="dataUser">Даю согласие на обработку персональных данных</label>
 			</div>
+
 			<button type="submit" class="push" id="push">Push</button>
 		</form>
 	</div>
