@@ -86,17 +86,22 @@ body {
 	margin-right: 15px;
 }
 
-.error {
-	color: green;
-	position: absolute;
-	background-color: white;
-	width: max-content;
-	border: 1px solid black;
-	height: auto;
-	padding: 10px;
-	z-index: 1;
+.error,.advice {
+	font-size: 14px;
 }
 
-.advice {
+.error {
+	color: red;
+}
+
+.success {
 	color: green;
+}
+
+.form__fieldset-contact {
+	display: grid;
+}
+
+.password,.passwordCheck {
+	display: grid;
 }
