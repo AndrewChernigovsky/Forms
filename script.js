@@ -69,75 +69,22 @@ let classError = 'error';
 ///////////////
 /////////////////
 
-function validateInput(){
-    //check username is empty
-    if(username.value.trim()===""){
-       onError(username,"User Name cannot be empty");
-    }else{
-        onSuccess(username);
-    }
-    if(email.value.trim()===""){
-        onError(email,"Email cannot be empty");
-    }else{
-        if(!isValidEmail(email.value.trim())){
-            onError(email,"Email is not valid");
-        }else{
-            onSuccess(email);
-        }
-    }
-
-    //password
-    if(password.value.trim()===""){
-        onError(password,"User Name cannot be empty");
-     }else{
-         onSuccess(password);
-     }
-     if(passwordCheck.value.trim()===""){
-        onError(passwordCheck,"User Name cannot be empty");
-     }else{
-         if(password.value.trim()!==passwordCheck.value.trim()){
-            onError(passwordCheck,"Password & Confirm password not matching");
-         }
-         else
-         onSuccess(passwordCheck);
-     }
-}
-
 form.addEventListener('submit', function(evt) {
-	event.preventDefault();
-    validateInput();
+	checkingForm();
 });
 
-function onSuccess(input){
-	let parent=input.parentElement;
-	parent.insertAdjacentHTML(
-		"beforeend",
-		`<p class="small">
-		error
-		</p>`
-	);
-	let messageEle=document.querySelector(".small");
-	messageEle.style.visibility="hidden"; 
-	parent.classList.remove("error");
-	parent.classList.add("success");  
+function checkingForm() {
+	if(isValidEmail(email)){
+		email.classList.add('success')
+		console.log(1)
+	}	else {
+		email.classList.add('error')
+		console.log(2)
+	}
+
+	evt.preventDefault();
 }
 
-function onError(input,message){
-	let parent=input.parentElement;
-	parent.insertAdjacentHTML(
-		"beforeend",
-		`<p class="small">
-		error
-		</p>`
-	);
-	let messageEle=document.querySelector(".small");
-	messageEle.style.visibility="visible";
-	messageEle.innerText=message;
-	parent.classList.add("error");
-	parent.classList.remove("success");
-
-}
-
-function isValidEmail(email){
-	return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(emailValue);
+function isValidEmail(input){
+	return !/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(input.value);
 };
