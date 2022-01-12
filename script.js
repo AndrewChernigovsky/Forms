@@ -84,18 +84,44 @@ form.addEventListener('submit', function(evt) {
 				"beforeend",
 				`<span class="errorText">поле должно быть заполнено</span>`
 			);
-			console.log(1)
 			evt.preventDefault();
 		} else {
-			if(el.classList.contains('error')) {
+			if (el.classList.contains('error')) {
 				el.classList.remove('error');
+				el.classList.add('success');
+			};
+
+			if (isValidEmail(email) && isValidPhone(phone)){
+				el.classList.add('error');
+				el.parentElement.insertAdjacentHTML(
+					"beforeend",
+					`<span class="errorText">Неккоректно заполнено</span>`
+				);
+			} else {
+				el.classList.remove('error');
+				el.classList.add('success');
 			}
-			el.classList.add('success')
-		};
+		}
+
+
+
 	})
 	evt.preventDefault();
 });
 
+email.addEventListener('focus', () => {
+	if (email.classList.contains('error') || email.classList.contains('errorText')) {
+		email.classList.remove('error');
+		email.nextElementSibling.remove();
+	} else {
+		email.classList.add('success');
+	}
+})
+
 function isValidEmail(input){
 	return !/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(input.value);
+};
+
+function isValidPhone(input){
+	return !/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(input.value)
 };
