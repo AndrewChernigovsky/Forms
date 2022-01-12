@@ -3,7 +3,8 @@ const form = document.forms.form,
 			phone = form.phone,
 			password = form.pass,
 			passwordCheck = form.passCheck,
-			username = form.username;
+			username = form.username,
+			inputs = document.querySelectorAll('.inputForm');
 
 let emailValue = email.value;
 // let phoneValue = phone.value;
@@ -69,21 +70,31 @@ let classError = 'error';
 ///////////////
 /////////////////
 
+
+
 form.addEventListener('submit', function(evt) {
-	checkingForm();
-});
+	inputs.forEach(el => {
+		if (el.nextElementSibling){
+			el.nextElementSibling.remove()
+		}
 
-function checkingForm() {
-	if(isValidEmail(email)){
-		email.classList.add('success')
-		console.log(1)
-	}	else {
-		email.classList.add('error')
-		console.log(2)
-	}
-
+		if (el.value === '') {
+			el.classList.add('error');
+			el.parentElement.insertAdjacentHTML(
+				"beforeend",
+				`<span class="errorText">поле должно быть заполнено</span>`
+			);
+			console.log(1)
+			evt.preventDefault();
+		} else {
+			if(el.classList.contains('error')) {
+				el.classList.remove('error');
+			}
+			el.classList.add('success')
+		};
+	})
 	evt.preventDefault();
-}
+});
 
 function isValidEmail(input){
 	return !/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(input.value);

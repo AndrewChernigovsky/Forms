@@ -46,11 +46,6 @@ body {
 	margin-top: 0;
 }
 
-.form__fieldset input{
-	margin-bottom: 10px;
-	position: relative;
-}
-
 .form__fieldset-sex {
 	margin-right: 15px;
 }
@@ -108,8 +103,22 @@ body {
 
 .form__fieldset-contact {
 	display: grid;
+	margin-bottom: 20px;
+	min-height: 70px;
 }
 
 .password,.passwordCheck {
 	display: grid;
+}
+
+.inputForm {
+	margin-bottom: 0;
+	width: 280px;
+	padding: 10px 10px;
+}
+
+.errorText {
+	color: red;
+	font-size: 12px;
+	padding-top: 5px;
 }
