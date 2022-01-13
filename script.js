@@ -89,23 +89,45 @@ form.addEventListener('submit', function(evt) {
 			if (el.classList.contains('error')) {
 				el.classList.remove('error');
 				el.classList.add('success');
-			};
+			}
 
-			if (isValidEmail(email) && isValidPhone(phone)){
-				el.classList.add('error');
-				el.parentElement.insertAdjacentHTML(
+			if (isValidEmail(email)){
+				if (email.nextElementSibling){
+					email.nextElementSibling.remove()
+				}
+				email.classList.remove('success');
+				email.classList.add('error');
+				email.parentElement.insertAdjacentHTML(
 					"beforeend",
 					`<span class="errorText">Неккоректно заполнено</span>`
 				);
 			} else {
-				el.classList.remove('error');
-				el.classList.add('success');
+				if (email.nextElementSibling){
+					email.nextElementSibling.remove()
+				}
+				email.classList.remove('error');
+				email.classList.add('success');
+			};
+
+			if (isValidPhone(phone)){
+				if (phone.nextElementSibling){
+					phone.nextElementSibling.remove()
+				}
+				phone.classList.remove('success');
+				phone.classList.add('error');
+				phone.parentElement.insertAdjacentHTML(
+					"beforeend",
+					`<span class="errorText">Неккоректно заполнено</span>`
+				);
+			} else {
+				if (phone.nextElementSibling){
+					phone.nextElementSibling.remove()
+				}
+				phone.classList.remove('error');
+				phone.classList.add('success');
 			}
 		}
-
-
-
-	})
+	});
 	evt.preventDefault();
 });
 
@@ -123,5 +145,5 @@ function isValidEmail(input){
 };
 
 function isValidPhone(input){
-	return !/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(input.value)
+	return !/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(input.value);
 };
