@@ -89,7 +89,7 @@ body {
 	margin-right: 15px;
 }
 
-.error,.advice {
+.error,.success {
 	font-size: 14px;
 }
 
@@ -125,4 +125,18 @@ body {
 
 .requiredStar {
 	color: red;
+}
+
+.file-image {
+	max-width: 120px;
+}
+
+.file-image img {
+	max-width: inherit;
+	flex: none;
+	object-fit: contain;
+}
+
+.commentText {
+	padding: 20px;
 }

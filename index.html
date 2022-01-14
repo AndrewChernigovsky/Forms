@@ -27,19 +27,19 @@
 				</fieldset>
 			</div>
 
-			<!-- <div class="wrapper">
+			<div class="wrapper">
 				<fieldset class="form__fieldset">
 					<div class="password">
 						<label for="pass">
 							Your password
 						</label>
-						<input type="password" name="pass" id="pass"></input>
+						<input class="inputForm" type="password" name="pass" id="pass"></input>
 					</div>
 					<div class="passwordCheck">
 						<label for="passCheck">
 							Confirm password
 						</label>
-						<input type="password" name="passCheck" id="passCheck"></input>
+						<input class="inputForm" type="password" name="passCheck" id="passCheck"></input>
 					</div>
 				</fieldset>
 			</div>
@@ -98,14 +98,14 @@
 					<input type="file" name="file" id="file"></input>
 					<label for="file">photo your truble</label>
 				</div>
-				<textarea name="comment" id="comment" cols="30" rows="10" placeholder="Опишите пробему здесь">
+				<textarea class="commentText" name="comment" id="comment" cols="30" rows="10" placeholder="Опишите пробему здесь" maxlength="300">
 				</textarea>
 			</div>
 
 			<div class="datauser-fieldset">
-				<input type="checkbox" class="datauser" id="dataUser"></input>
 				<label for="dataUser">Даю согласие на обработку персональных данных</label>
-			</div> -->
+				<input type="checkbox" class="datauser" name="dataUser" id="dataUser"></input>
+			</div>
 
 			<button type="submit" class="push" id="push">Push</button>
 		</form>
